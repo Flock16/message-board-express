@@ -1,0 +1,14 @@
+<h1><%= title %></h1>
+<% messages.forEach((message, index) => { %>
+<p><strong><%= message.user %></strong></p>
+<p><%= message.text %></p>
+<p><%= message.added %></p>
+<button onclick="location.href='./message/<%=index%>'" type="button">
+  Open
+</button>
+<br />
+<br />
+<%}); %>
+
+<!-- <a href="./new">New Message</a> -->
+<button onclick="location.href='/new'">New Message</button>
