@@ -17,7 +17,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/message", messageRouter);
 app.use("/", indexRouter);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`My first Express app - listening on port ${PORT}!`);
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`My first Express app - listening on port ${PORT}!`);
+// });
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, "::", () => {
+  console.log(`Server listening on [::]${port}`);
 });
