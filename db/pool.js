@@ -4,7 +4,7 @@ import "dotenv/config";
 
 const pool = new Pool({
   // connectionString: `${process.env.DATABASE_URL}`,
-  connectionString: `http://postgres.railway.internal:5432`,
+  connectionString: `${process.env.DB_URL} `,
 });
 
 export default pool;
