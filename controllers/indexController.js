@@ -1,6 +1,8 @@
-import { messages } from "../db.js";
+import * as db from "../db/queries.js";
 
-export const getIndex = (req, res) => {
+export const getIndex = async (req, res) => {
+  const messages = await db.getAllMessages();
+  console.log(messages);
   res.render("index", { title: "Mini Messageboard", messages: messages });
 };
 
@@ -8,11 +10,10 @@ export const getNew = (req, res) => {
   res.render("form");
 };
 
-export const addMessage = (req, res) => {
-  messages.push({
-    text: req.body.message,
-    user: req.body.user,
-    added: new Date(),
-  });
+export const addMessage = async (req, res) => {
+  const username = req.body.user;
+  const message = req.body.message;
+  console.log(username, message);
+  await db.addMessage(username, message);
   res.redirect("/");
 };

@@ -1,9 +1,9 @@
 <h1><%= title %></h1>
-<% messages.forEach((message, index) => { %>
-<p><strong><%= message.user %></strong></p>
-<p><%= message.text %></p>
-<p><%= message.added %></p>
-<button onclick="location.href='./message/<%=index%>'" type="button">
+<% messages.forEach((message) => { %>
+<p><strong><%= message.username %></strong></p>
+<p><%= message.message %></p>
+<p><%= message.created %></p>
+<button onclick="location.href='./message/<%=message.id%>'" type="button">
   Open
 </button>
 <br />
